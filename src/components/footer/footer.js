@@ -28,6 +28,7 @@ const Icon = ({iconColor, altColor, iconSize, path}) => {
       onFocus = { () => setColor(altColor) }
       onMouseLeave = { () => setColor(iconColor) }
       role = "link"
+      tabIndex = "0"
     >
       <path d={path} />
     </svg>
@@ -45,6 +46,7 @@ const TwitterIcon = ({iconColor, altColor, iconSize, path}) => {
       onFocus = { () => setColor(altColor) }
       onMouseLeave = { () => setColor(iconColor) }
       role = "link"
+      tabIndex = "0"
     >
       <svg
         className = {footerStyles.twitterLogo}
