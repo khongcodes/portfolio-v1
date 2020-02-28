@@ -1,6 +1,6 @@
 .headerTitle {
   margin: 0;
-  display: inline
+  display: inline;
 }
 
 .headerList {
@@ -11,4 +11,17 @@
 .headerLink {
   display: inline-block;
   margin-right: 1rem;
+}
+
+.twitterLogoContainer {
+  border-radius: 2px;
+  display: block;
+  padding-top: 2.5px;
+  box-sizing: border-box;
+}
+
+.twitterLogo {
+  margin: auto;
+  display: block;
+  background-color: rgb(126, 126, 126);
 }

@@ -13,7 +13,13 @@ import "./global.scss";
 const Layout = ({ children }) => {
   return (
     <>
-      <Header siteTitle='Kevin Hong' />
+      <Header
+        siteTitle = 'Kevin Hong'
+        iconColor = 'rgb(125, 125, 125)'
+        altColor = 'rgb(100, 100, 100)'
+        iconSize = {24}
+      />
+      
       <div>
         <main>{children}</main>
 
