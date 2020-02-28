@@ -7,7 +7,7 @@
 
 import React from "react";
 
-import Header from "./header";
+import Header from "./header/header";
 import "../styles/global.scss";
 
 const Layout = ({ children }) => {
