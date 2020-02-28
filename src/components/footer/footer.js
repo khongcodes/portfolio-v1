@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import headerStyles from './header.module.scss';
+import footerStyles from "./footer.module.scss"
 
 const gitHubIcon = require('simple-icons/icons/github');
 const linkedInIcon = require('simple-icons/icons/linkedin');
@@ -8,7 +8,7 @@ const twitterIcon = require('simple-icons/icons/twitter');
 const mediumIcon = require('simple-icons/icons/medium');
 
 const ListLink = props => (
-  <li className={headerStyles.headerLink}>
+  <li className={footerStyles.iconLink}>
     <a href={props.to} target="_blank" rel="noopener noreferrer">
       {props.children}
     </a>
@@ -39,7 +39,7 @@ const TwitterIcon = ({iconColor, altColor, iconSize, path}) => {
 
   return (
     <div 
-      className = {headerStyles.twitterLogoContainer}
+      className = {footerStyles.twitterLogoContainer}
       style = {{backgroundColor:color, width:iconSize, height:iconSize }}
       onMouseOver = { () => setColor(altColor) }
       onFocus = { () => setColor(altColor) }
@@ -47,7 +47,7 @@ const TwitterIcon = ({iconColor, altColor, iconSize, path}) => {
       role = "link"
     >
       <svg
-        className = {headerStyles.twitterLogo}
+        className = {footerStyles.twitterLogo}
         width = {iconSize - 7}
         height = {iconSize - 7}
         fill = 'white'
@@ -59,28 +59,38 @@ const TwitterIcon = ({iconColor, altColor, iconSize, path}) => {
   )
 }
 
-const Header = ({ ...iconProps }) => {
+const Footer = ({...iconProps}) => {
   return (
-  <header>
-    <ul className={headerStyles.headerList}>
-      <ListLink to='https://github.com/khongcodes' >
-        <Icon path={gitHubIcon.path} {...iconProps} />
-      </ListLink>
+    <footer className={footerStyles.container}>
+      <div className={footerStyles.left}>
+        Built with {` `} <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </div>
 
-      <ListLink to='https://linkedin.com/in/khongcodes' >
-        <Icon path={linkedInIcon.path} {...iconProps}/>
-      </ListLink>
+      <div className={footerStyles.center}>
+        Kevin Hong, {new Date().getFullYear()}
+      </div>
 
-      <ListLink to='https://twitter.com/khongcodes' >
-        <TwitterIcon path={twitterIcon.path} {...iconProps}/>
-      </ListLink>
+      <div className={footerStyles.right}>
+        <ul className={footerStyles.iconList}>
+          <ListLink to='https://github.com/khongcodes' >
+            <Icon path={gitHubIcon.path} {...iconProps} />
+          </ListLink>
 
-      <ListLink to='https://medium.com/@khongcodes' >
-        <Icon path={mediumIcon.path} {...iconProps} />
-      </ListLink>
-    </ul>
-  </header>
+          <ListLink to='https://linkedin.com/in/khongcodes' >
+            <Icon path={linkedInIcon.path} {...iconProps}/>
+          </ListLink>
+
+          <ListLink to='https://twitter.com/khongcodes' >
+            <TwitterIcon path={twitterIcon.path} {...iconProps}/>
+          </ListLink>
+
+          <ListLink to='https://medium.com/@khongcodes' >
+            <Icon path={mediumIcon.path} {...iconProps} />
+          </ListLink>
+        </ul>
+      </div>
+    </footer>
   )
 }
 
-export default Header
+export default Footer

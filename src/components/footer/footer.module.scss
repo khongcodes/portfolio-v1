@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  margin: 5em auto 0;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left {
+  text-align: right;
+  width:25%;
+}
+
+.right {
+  width: 25%;
+}
+
+.center {
+  text-align: center;
+  width: 25%;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////             social media icon list             ////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+.iconList {
+  list-style: none;
+  padding-left: 0;
+  margin-top: -0.4rem;
+}
+
+.iconLink {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.iconLink:last-of-type {
+  margin-right: 0;
+}
+
+.twitterLogoContainer {
+  border-radius: 2px;
+  display: block;
+  padding-top: 3.5px;
+  box-sizing: border-box;
+}
+
+.twitterLogo {
+  margin: auto;
+  display: block;
+}
+
+@media only screen and (max-width: 660px) {
+  .container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    font-size: 0.7rem;
+    height: 6rem;
+  }
+
+  .left {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  .center {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .right {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .iconList {
+    margin-top: 0;
+  }
+
+  .iconLink {
+    margin-right: 8%;
+  }
+}

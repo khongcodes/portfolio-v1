@@ -1,15 +1,20 @@
-import React from "react"
-// import { Link } from "gatsby"
+import React from "react";
 
-import Layout from "../components/layout"
+import Layout from "../components/layout";
+import indexStyles from "../styles/index.module.scss";
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div className={indexStyles.introSection}>
+      <h1>Kevin Hong</h1>
+      <p>Full stack web developer & designer.</p>
     </div>
+
+    <div>
+      <h2>Projects</h2>
+    </div>
+
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}/>
   </Layout>
 )
 

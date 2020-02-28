@@ -7,28 +7,19 @@
 
 import React from "react";
 
-import Header from "./header/header";
-import "./global.scss";
+import Footer from "./footer/footer";
+import "../styles/global.scss";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header
-        siteTitle = 'Kevin Hong'
-        iconColor = 'rgb(125, 125, 125)'
-        altColor = 'rgb(100, 100, 100)'
+      <main>{children}</main>
+
+      <Footer 
+        iconColor = 'rgb(155, 155, 155)'
+        altColor = 'black'
         iconSize = {24}
       />
-      
-      <div>
-        <main>{children}</main>
-
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
     </>
   )
 }
