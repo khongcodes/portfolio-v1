@@ -8,14 +8,13 @@
 import React from "react";
 
 import Header from "./header/header";
-import "../styles/global.scss";
+import "./global.scss";
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle='Kevin Hong' />
       <div>
-      
         <main>{children}</main>
 
         <footer>
