@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
-import { Github, Linkedin, Twitter, Medium } from "@icons-pack/react-simple-icons";
 
-import headerStyles from './header.module.scss'
+import headerStyles from './header.module.scss';
 
-const handleMouseOver = () => {
-  
-}
+const gitHubIcon = require('simple-icons/icons/github');
+const linkedInIcon = require('simple-icons/icons/linkedin');
+const twitterIcon = require('simple-icons/icons/twitter');
+const mediumIcon = require('simple-icons/icons/medium');
 
 const ListLink = props => (
   <li className={headerStyles.headerLink}>
@@ -16,13 +16,48 @@ const ListLink = props => (
   </li>
 )
 
-const TwitterContainer = ({iconSize, iconColor}) => (
-  <div className={headerStyles.twitterLogoContainer} style={{backgroundColor:iconColor, width:iconSize, height:iconSize }}>
-    <Twitter color='white' size={iconSize-7} className={headerStyles.twitterLogo} />
-  </div>
-)
+const Icon = ({iconColor, altColor, iconSize, path}) => {
+  const [color, setColor] = useState(iconColor)
 
-const Header = ({ siteTitle, iconSize, iconColor }) => (
+  return (
+    <svg
+      width = {iconSize}
+      height = {iconSize}
+      fill = {color}
+      viewBox = {`0 0 ${iconSize} ${iconSize}`}
+      onMouseOver = { () => setColor(altColor) }
+      onMouseLeave = { () => setColor(iconColor) }
+    >
+      <path d={path} />
+    </svg>
+  )
+}
+
+const TwitterIcon = ({iconColor, altColor, iconSize, path}) => {
+  const [color, setColor] = useState(iconColor)
+
+  return (
+    <div 
+      className = {headerStyles.twitterLogoContainer}
+      style = {{backgroundColor:color, width:iconSize, height:iconSize }}
+      onMouseOver = { () => setColor(altColor) }
+      onMouseLeave = { () => setColor(iconColor) }
+    >
+      <svg
+        className = {headerStyles.twitterLogo}
+        width = {iconSize - 7}
+        height = {iconSize - 7}
+        fill = 'white'
+        viewBox = {`0 0 ${iconSize} ${iconSize}`}
+      >
+        <path d={path}/>
+      </svg>
+    </div>
+  )
+}
+
+const Header = ({ siteTitle, ...iconProps }) => {
+  return (
   <header>
     <h1 className={headerStyles.headerTitle}>
       <Link to="/" >{siteTitle}</Link>
@@ -30,26 +65,23 @@ const Header = ({ siteTitle, iconSize, iconColor }) => (
 
     <ul className={headerStyles.headerList}>
       <ListLink to='https://github.com/khongcodes' >
-        <Github color={iconColor} size={iconSize} />
+        <Icon path={gitHubIcon.path} {...iconProps} />
       </ListLink>
 
       <ListLink to='https://linkedin.com/in/khongcodes' >
-        <Linkedin color={iconColor} size={iconSize} />
+        <Icon path={linkedInIcon.path} {...iconProps}/>
       </ListLink>
 
       <ListLink to='https://twitter.com/khongcodes' >
-        <TwitterContainer iconSize={iconSize} iconColor={iconColor}/>
+        <TwitterIcon path={twitterIcon.path} {...iconProps}/>
       </ListLink>
 
       <ListLink to='https://medium.com/@khongcodes' >
-        <Medium color={iconColor} size={iconSize} />
+        <Icon path={mediumIcon.path} {...iconProps} />
       </ListLink>
     </ul>
   </header>
-)
-
-Header.defaultProps = {
-  siteTitle: ``,
+  )
 }
 
 export default Header
