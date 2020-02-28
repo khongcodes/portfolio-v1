@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React from "react";
 
-import Header from "./header"
-
+import Header from "./header";
+import "../styles/global.scss";
 
 const Layout = ({ children }) => {
   return (
