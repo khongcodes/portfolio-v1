@@ -1,23 +1,18 @@
 import React, { useState } from 'react'
 
-const Project = ({informListStatus, projectId}) => {
-  const [color, setColor] = useState('pink')
+import projectStyles from '../styles/Project.module.scss'
 
-  const toggleStatus = () => {
-    let informed = {};
-    if (color === 'pink') {
-      informed = {color:'green', pass:projectId}
-    } else {
-      informed = {color:'pink', pass:0}
-    }
-    setColor(informed.color);
-    informListStatus(informed.pass);
+const Project = ({informListStatus, projectId, active}) => {
+  const handleClick = () => {
+    informListStatus(active ? 0 : projectId);
   }
+
+  const getColor = () => active ? 'green' : 'pink'
 
   return (
     <div
-      style={{width:20, height:20, backgroundColor:color}}
-      onClick = {toggleStatus}
+      style={{width:20, height:20, backgroundColor:getColor()}}
+      onClick = {handleClick}
     >
 
     </div>

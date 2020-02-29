@@ -8,12 +8,10 @@ const ProjectsList = () => {
   return (
     <div>
       {selectedProject}
-      <Project projectId={1} informListStatus={ id => setSelectedProject(id) }/>
-      <Project projectId={2} informListStatus={ id => setSelectedProject(id) }/>
-      <Project projectId={3} informListStatus={ id => setSelectedProject(id) }/>
-      <Project projectId={4} informListStatus={ id => setSelectedProject(id) }/>
-
-      
+      <Project projectId={1} active={selectedProject === 1} informListStatus={ id => setSelectedProject(id) }/>
+      <Project projectId={2} active={selectedProject === 2} informListStatus={ id => setSelectedProject(id) }/>
+      <Project projectId={3} active={selectedProject === 3} informListStatus={ id => setSelectedProject(id) }/>
+      <Project projectId={4} active={selectedProject === 4} informListStatus={ id => setSelectedProject(id) }/>
     </div>
   )
 }
