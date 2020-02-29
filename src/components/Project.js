@@ -2,19 +2,21 @@ import React, { useState } from 'react'
 
 import projectStyles from '../styles/Project.module.scss'
 
-const Project = ({informListStatus, projectId, active}) => {
+const Project = ({
+  informListStatus, projectId, active, 
+  name, description, tech
+}) => {
+
   const handleClick = () => {
     informListStatus(active ? 0 : projectId);
   }
 
-  const getColor = () => active ? 'green' : 'pink'
+  // const getColor = () => active ? 'green' : 'pink'
 
   return (
-    <div
-      style={{width:20, height:20, backgroundColor:getColor()}}
-      onClick = {handleClick}
-    >
-
+    <div className={projectStyles.projectTitleContainer} onClick = {handleClick}>
+      <h3 className={projectStyles.title}> {name}</h3>
+      <p className={projectStyles.description}> {description}</p>
     </div>
   )
 }
