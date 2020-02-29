@@ -9,7 +9,7 @@ const ProjectsList = () => {
 
   return (
     <div>
-      {selectedProject}
+      {/* {selectedProject} */}
       <Project 
         projectId={1} active={selectedProject === 1} informListStatus={ listCallback }
         name = 'Invitation'
