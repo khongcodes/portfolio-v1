@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import footerStyles from "./footer.module.scss"
+import footerStyles from "../styles/footer.module.scss"
 
 const gitHubIcon = require('simple-icons/icons/github');
 const linkedInIcon = require('simple-icons/icons/linkedin');
