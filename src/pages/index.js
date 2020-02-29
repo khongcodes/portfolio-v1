@@ -12,7 +12,7 @@ const IndexPage = () => (
       <p>Full stack web developer & designer</p>
     </div>
 
-    <div>
+    <div className={indexStyles.projectsSection}>
       <h2>Projects</h2>
       <ProjectsList />
     </div>
