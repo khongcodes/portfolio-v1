@@ -15,7 +15,7 @@
 
 .projectTitleContainer:hover .title {
   // font-size: 1.3em;
-  text-shadow: 1px 1px #ff65c4d5;
+  text-shadow: 1px 1px #ffb2e1d5;
 }
 
 .title {
@@ -47,8 +47,10 @@
 }
 
 .tech:hover {
-  background-color: rgb(255, 225, 230);
-  border-color: pink;
+  position: relative;
+  top: -1px;
+  background-color: rgb(255, 238, 241);
+  border-color: rgb(255, 224, 230);
 }
 
 .tech:first-of-type {
@@ -59,8 +61,13 @@
 ///////////////////////                expanded project                ////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+.projectTitleContainerSelected .title{
+  text-shadow: 1px 1px #ff65c4d5;
+}
+
 .expandedProject {
   display: inline-block;
   background-color: pink;
   height: 10em;
+  width: 100%;
 }

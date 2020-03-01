@@ -14,20 +14,20 @@ const ProjectsList = () => {
         projectId={1} active={selectedProject === 1} informListStatus={ listCallback }
         name = 'Invitation'
         description = 'A web app for creating shareable event info pages, uncoupled from social media'
-        tech = {['React.js', 'Redux', 'Rails', 'Google Maps API']}
+        tech = {['Rails', 'React.js', 'Redux', 'Google Maps API']}
       />
 
       <Project
         projectId={2} active={selectedProject === 2} informListStatus={ listCallback }
         name = "Hero's Journey Spread"
         description = 'A storytelling game driven by drawing and interpreting tarot cards'
-        tech = {['Rails', 'CSS', 'JavaScript']}
+        tech = {['Rails', 'SQLite', 'CSS', 'JavaScript']}
       />
 
       <Project projectId={3} active={selectedProject === 3} informListStatus={ listCallback }
         name = 'Wandering'
         description = 'A browser-text-based rogue-lite game exploring abandoned spaces'
-        tech = {['Ruby', 'Rails', 'SQLite']}
+        tech = {['Ruby', 'Rails', 'SQLite', 'CSS']}
       />
 
       <Project projectId={4} active={selectedProject === 4} informListStatus={ listCallback }

@@ -27,7 +27,10 @@ const Project = ({
   }
 
   return (
-    <div className={projectStyles.projectTitleContainer} onClick = {handleClick}>
+    <div 
+      className={!active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected}
+      onClick = {handleClick}
+    >
       <h3 className={projectStyles.title}> {name} </h3>
       <p className={projectStyles.description}> {description} </p>
 
