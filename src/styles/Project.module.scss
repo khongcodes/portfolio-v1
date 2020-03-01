@@ -7,7 +7,8 @@
 
 .projectTitleContainer {
   width: 80%;
-  height: 3em;
+  max-height: fit-content;
+  min-height: 3em;
   margin-bottom: 2em;
   margin-top: 0em;
 }
@@ -26,6 +27,40 @@
 
 .description {
   @extend %noSelect;
-  margin-top: 0;
+  margin: 0;
   font-size: 0.9em;
+}
+
+.techList {
+  @extend %noSelect;
+  margin: 0.5rem 0 1rem;
+}
+
+.tech {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.8em;
+  padding: 0.3em 0.5em;
+  margin: 0 0.3em;
+  border: 0.5px solid rgb(204, 204, 204);
+  border-radius: 0.3em;
+}
+
+.tech:hover {
+  background-color: rgb(255, 225, 230);
+  border-color: pink;
+}
+
+.tech:first-of-type {
+  margin-left: 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                expanded project                ////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+.expandedProject {
+  display: inline-block;
+  background-color: pink;
+  height: 10em;
 }
