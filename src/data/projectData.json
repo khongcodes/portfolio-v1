@@ -4,7 +4,6 @@
     "name": "Invitation",
     "description": "A web app for creating shareable event info pages, uncoupled from social media",
     "tech": ["Rails", "React.js", "Redux", "Google Maps API"],
-    "imgPath": "",
     "git": "",
     "live": "",
     "youtube": ""
@@ -14,7 +13,6 @@
     "name": "Hero's Journey Spread",
     "description": "A storytelling game driven by drawing and interpreting tarot cards",
     "tech": ["Rails", "SQLite", "CSS", "JavaScript"],
-    "imgPath": "",
     "git": "",
     "live": "",
     "youtube": ""
@@ -24,7 +22,6 @@
     "name": "Wandering",
     "description": "A text-based rogue-lite browser game exploring abandoned spaces",
     "tech": ["Ruby", "Rails", "SQLite", "CSS"],
-    "imgPath": "",
     "git": "",
     "live": "",
     "youtube": ""
@@ -34,7 +31,6 @@
     "name": "ItchScraper",
     "description": "CLI application for browsing Itch.io",
     "tech": ["Ruby", "Nokogiri"],
-    "imgPath": "",
     "git": "",
     "live": "",
     "youtube": ""
