@@ -19,7 +19,8 @@ const ExpandedProject = ({active}) => {
 
 const Project = ({
   informListStatus, projectId, active, 
-  name, description, tech
+  name, description, tech,
+  imgPath, git, live, youtube
 }) => {
 
   const handleClick = () => {
