@@ -3,13 +3,13 @@ import React from 'react'
 import projectStyles from '../styles/Project.module.scss'
 
 const LinkButton = ({text, link}) => (
-  // link !== "" ? 
+  link !== "" ? 
     <div className={projectStyles.linkButton}>
       {text}
     </div>
-  // :
-  //   <div>
-  //   </div>
+  :
+    <div>
+    </div>
 )
 
 const ExpandedProject = ({active, id, name, img, git, live, youtube}) => {
@@ -53,13 +53,12 @@ const Project = ({
 
   let projHeader = React.createRef();
 
-  const handleClick = event => {
+  const handleClick = () => {
     informListStatus(active ? 0 : id);
     if (active) {
       projHeader.current.blur()
     }
   }
-
 
   return (
     <div>

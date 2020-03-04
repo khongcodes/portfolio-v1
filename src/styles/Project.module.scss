@@ -81,7 +81,6 @@
   @extend %focusVisible
 }
 
-
 .projectTitleContainerSelected .title{
   text-shadow: 1px 1px #ff65c4d5;
 }
@@ -89,9 +88,9 @@
 .expandedProject {
   display: flex;
   justify-content: flex-start;
-  // background-color: pink;
-  height: fit-content;
-  width: 100%;
+  min-height: fit-content;
+  width: 80%;
+  padding: 0.4rem;
 }
 
 .imgContainer {
