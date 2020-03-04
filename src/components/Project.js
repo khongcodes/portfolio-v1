@@ -53,10 +53,10 @@ const Project = ({
 
   let projHeader = React.createRef();
 
-  const handleClick = () => {
+  const toggleActive = () => {
     informListStatus(active ? 0 : id);
     if (active) {
-      projHeader.current.blur()
+      // projHeader.current.blur()
     }
   }
 
@@ -64,13 +64,13 @@ const Project = ({
     <div>
       <div 
         className={!active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected}
-        onClick = {handleClick}
-        onFocus = {event => {
-          event.target.className = projectStyles.projectTitleContainerFocus
+        onClick = {toggleActive}
+        onKeyPress = {event => {
+          if (event.key === 'Enter') {
+            toggleActive()
+          }
         }}
-        onBlur = {event => {
-          event.target.className = !active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected
-        }}
+
         ref = {projHeader}
         role = "tab"
         tabIndex = "0"
