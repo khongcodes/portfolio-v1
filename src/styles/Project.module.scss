@@ -58,15 +58,16 @@
   font-size: 0.8em;
   padding: 0.3em 0.5em;
   margin: 0 0.3em 0.4em;
-  border: 0.5px solid rgb(204, 204, 204);
-  border-radius: 0.3em;
+  color: rgb(66, 66, 66);
+  border-bottom: 1px solid rgb(66, 66, 66);
+  // border: 0.5px solid rgb(204, 204, 204);
+  // border-radius: 0.3em;
 }
 
 .tech:hover {
   position: relative;
   top: -1px;
   background-color: rgb(255, 238, 241);
-  border-color: rgb(255, 224, 230);
 }
 
 .tech:first-of-type {
@@ -118,12 +119,29 @@
 }
 
 .linkButton {
-  border: 0.5px solid rgb(204, 204, 204);
-  border-radius: 0.45rem;
+  // border: 0.5px solid rgb(255, 181, 181);
+  // border-radius: 0.45rem;
+  width: 3rem;
   padding: 0.5rem 0.6rem;
   font-size: 0.9em;
-  text-align: center;
-  margin-bottom: 1em;
+  // text-align: center;
+  margin-bottom: 0.5rem;
+  color: red;
+  // box-sizing: border-box;
 
-  background-color: rgb(238, 63, 92);
+  // color: white;
+  // background-color: rgb(238, 63, 92);
+}
+
+.linkButton:hover {
+  color: black;
+  background-color: rgb(255, 164, 180);
+  border-bottom: 1px solid black;
+  margin-bottom: 0.45rem;
+}
+
+.linkButton:focus {
+  @extend %focusVisible;
+  outline-style: dotted;
+  outline-offset: 0.05rem;
 }

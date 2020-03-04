@@ -4,8 +4,8 @@ import projectStyles from '../styles/Project.module.scss'
 
 const LinkButton = ({text, link}) => (
   link !== "" ? 
-    <a href={link}>
-      <div className={projectStyles.linkButton}>
+    <a href={link} tabIndex="-1">
+      <div className={projectStyles.linkButton} tabIndex="0">
         {text}
       </div>
     </a>
