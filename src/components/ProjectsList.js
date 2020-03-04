@@ -4,8 +4,8 @@ import Project from './Project';
 import projectData from '../data/projectData';
 
 import invitationImg from '../images/invitation.png';
-import wanderingImg from '../images/wandering.png';
 import heroImg from '../images/hero-s-journey-spread.png';
+import wanderingImg from '../images/wandering.png';
 import itchImg from '../images/itchscraper.png';
 
 const ProjectsList = () => {
@@ -13,10 +13,10 @@ const ProjectsList = () => {
 
   const listCallback = id => setSelectedProject(id)
 
-  const imgArray = [invitationImg, wanderingImg, heroImg, itchImg]
+  const imgArray = [invitationImg, heroImg, wanderingImg, itchImg]
 
   return (
-    <div>
+    <div role="tablist" >
       {projectData.projects.map((proj, index) => (
         <Project
           key = {proj.name}

@@ -11,6 +11,16 @@
   min-height: 3em;
   margin-bottom: 2em;
   margin-top: 0em;
+  border-radius: 0.5em;
+}
+
+.projectTitleContainerSelected {
+  width: 80%;
+  max-height: fit-content;
+  min-height: 3em;
+  margin-bottom: 2em;
+  margin-top: 0em;
+  border-radius: 0.5em;
 }
 
 .projectTitleContainer:hover .title {
@@ -61,13 +71,50 @@
 ///////////////////////                expanded project                ////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+%focusVisible {
+  outline-style: dashed;
+  outline-color: rgb(255, 101, 126);
+  outline-offset: 0.8em;
+}
+
+.projectTitleContainer:focus, .projectTitleContainerSelected:focus {
+  @extend %focusVisible
+}
+
+
 .projectTitleContainerSelected .title{
   text-shadow: 1px 1px #ff65c4d5;
 }
 
 .expandedProject {
-  display: inline-block;
-  background-color: pink;
-  height: 10em;
+  display: flex;
+  justify-content: flex-start;
+  // background-color: pink;
+  height: fit-content;
   width: 100%;
+}
+
+.imgContainer {
+  max-width: 70%;
+  max-height: 500px;
+  display: inline-block;
+}
+
+.imgContainer img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.buttonList {
+  @extend %noSelect;
+  margin-left: 1em;
+}
+
+.linkButton {
+  border: 0.5px solid rgb(204, 204, 204);
+  border-radius: 0.45rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 1em;
 }

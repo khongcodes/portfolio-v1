@@ -35,3 +35,9 @@ a {
 a:hover {
   text-decoration-line: line-through;
 }
+
+*:focus {
+  outline-width: thin;
+  outline-style: dotted;
+  outline-color: pink;
+}
