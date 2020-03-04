@@ -4,9 +4,11 @@ import projectStyles from '../styles/Project.module.scss'
 
 const LinkButton = ({text, link}) => (
   link !== "" ? 
-    <div className={projectStyles.linkButton}>
-      {text}
-    </div>
+    <a href={link}>
+      <div className={projectStyles.linkButton}>
+        {text}
+      </div>
+    </a>
   :
     <div>
     </div>
@@ -14,17 +16,12 @@ const LinkButton = ({text, link}) => (
 
 const ExpandedProject = ({active, id, name, img, git, live, youtube}) => {
   if (active) {
-    // console.log(img)
-    // console.log(git==="")
-    // console.log(live==="")
-    // console.log(youtube==="")
     return (
       <div 
         className = {projectStyles.expandedProject}
         role = 'tabpanel'
         id = {`panel-${id}`}
         aria-labelledby = {`tab-${id}`}
-        tabIndex = "0"
       >
         <div className={projectStyles.imgContainer}>
           <img src={img} alt={name}/>
@@ -51,13 +48,8 @@ const Project = ({
   ...expandedProjData
 }) => {
 
-  let projHeader = React.createRef();
-
   const toggleActive = () => {
     informListStatus(active ? 0 : id);
-    if (active) {
-      // projHeader.current.blur()
-    }
   }
 
   return (
@@ -71,7 +63,6 @@ const Project = ({
           }
         }}
 
-        ref = {projHeader}
         role = "tab"
         tabIndex = "0"
         aria-selected = {active}
