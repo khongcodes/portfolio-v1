@@ -5,7 +5,15 @@
   user-select: none;          /* Likely future */ 
 }
 
-.projectTitleContainer {
+%regularCursor {
+  cursor: default;
+}
+
+%offsetTitleShadow {
+  margin-bottom: -0.12rem;
+}
+
+%projectTitleContainerStyles {
   width: 80%;
   max-height: fit-content;
   min-height: 3em;
@@ -14,35 +22,33 @@
   border-radius: 0.5em;
 }
 
-.projectTitleContainerSelected {
-  width: 80%;
-  max-height: fit-content;
-  min-height: 3em;
-  margin-bottom: 2em;
-  margin-top: 0em;
-  border-radius: 0.5em;
+.projectTitleContainer, .projectTitleContainerSelected, .projectTitleContainerFocus {
+  @extend %projectTitleContainerStyles;
 }
 
-.projectTitleContainer:hover .title {
-  // font-size: 1.3em;
-  text-shadow: 1px 1px #ffb2e1d5;
+.projectTitleContainer:hover .title, .projectTitleContainerFocus .title {
+  font-size: 1.3em;
+  text-shadow: 0px 5px #ff58bfd5;
+  @extend %offsetTitleShadow;
 }
 
 .title {
-  @extend %noSelect;
-  cursor: default;
+  // @extend %noSelect;
+  @extend %regularCursor;
   width: fit-content;
   margin-bottom: 0.3rem;
 }
 
 .description {
-  @extend %noSelect;
-  margin: 0;
+  // @extend %noSelect;
+  @extend %regularCursor;
+  margin: 0.5rem 0 0;
   font-size: 0.9em;
 }
 
 .techList {
-  @extend %noSelect;
+  // @extend %noSelect;
+  @extend %regularCursor;
   margin: 0.5rem 0 1rem;
 }
 
@@ -51,7 +57,7 @@
   width: fit-content;
   font-size: 0.8em;
   padding: 0.3em 0.5em;
-  margin: 0 0.3em;
+  margin: 0 0.3em 0.4em;
   border: 0.5px solid rgb(204, 204, 204);
   border-radius: 0.3em;
 }
@@ -77,12 +83,14 @@
   outline-offset: 0.8em;
 }
 
-.projectTitleContainer:focus, .projectTitleContainerSelected:focus {
+.projectTitleContainerFocus, .projectTitleContainerSelected:focus {
   @extend %focusVisible
 }
 
 .projectTitleContainerSelected .title{
-  text-shadow: 1px 1px #ff65c4d5;
+  text-shadow: 0px 4px 2px #f828a8d5;
+  font-size: 1.3em;
+  @extend %offsetTitleShadow;
 }
 
 .expandedProject {

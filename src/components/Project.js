@@ -65,6 +65,12 @@ const Project = ({
       <div 
         className={!active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected}
         onClick = {handleClick}
+        onFocus = {event => {
+          event.target.className = projectStyles.projectTitleContainerFocus
+        }}
+        onBlur = {event => {
+          event.target.className = !active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected
+        }}
         ref = {projHeader}
         role = "tab"
         tabIndex = "0"
