@@ -1,23 +1,31 @@
+@mixin smallerMedia {
+  @media (max-width: 660px) {
+    @content;
+  }
+}
+
 .introSection {
   padding-top: 1rem;
   margin-bottom: 2rem;
-}
 
-.introSection h1 {
-  margin-bottom: 0;
-  font-family: 'Inter SemiBold';
-}
+  @include smallerMedia {
+    padding-top: 0.2rem;
+  }
 
-.introSection p {
-  margin-top: 0.2rem;
+  h1 {
+    margin-bottom: 0;
+    font-family: 'Inter SemiBold';  
+  }
+
+  p { margin-top: 0.2rem; }
 }
 
 .projectsSection {
   margin-top: 1rem;
-}
 
-.projectsSection h2 {
-  font-family: 'Inter Regular';
-  margin-bottom: 1em;
-  text-decoration: underline;
+  h2 {
+    font-family: 'Inter Regular';
+    margin-bottom: 1em;
+    text-decoration: underline;
+  }
 }

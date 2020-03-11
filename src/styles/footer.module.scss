@@ -1,3 +1,6 @@
+// not setting up smallerMedia mixin here because the grid layout makes more sense
+// when the area definitions are close together in the document
+
 .container {
   width: 100%;
   margin: 5em auto 0;
@@ -52,6 +55,11 @@
   display: block;
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////             smaller media viewing              ////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 @media only screen and (max-width: 660px) {
   .container {
     display: grid;
@@ -88,6 +96,6 @@
   }
 
   .iconLink {
-    margin-right: 8%;
+    margin-right: 6%;
   }
 }

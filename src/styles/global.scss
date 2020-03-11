@@ -18,6 +18,14 @@
   src: url("../fonts/Inter-SemiBold.woff2")
 }
 
+@mixin smallerMedia {
+  @media (max-width: 660px) {
+    @content;
+  }
+}
+
+
+
 body {
   font-family: 'Inter Light';
   max-width: 1920px;
@@ -26,6 +34,9 @@ body {
 main {
   width: 70%;
   margin: 0 auto;
+  @include smallerMedia {
+    width: 84%;
+  }
 }
 
 a {
@@ -40,8 +51,4 @@ a:hover {
   outline-width: thin;
   outline-style: dotted;
   outline-color: pink;
-}
-
-@media only screen and (max-width: 660px) {
-  
 }

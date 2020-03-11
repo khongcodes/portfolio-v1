@@ -1,3 +1,9 @@
+@mixin smallerMedia {
+  @media (max-width: 660px) {
+    @content;
+  }
+}
+
 %noSelect {
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
@@ -20,6 +26,12 @@
   margin-bottom: 2em;
   margin-top: 0em;
   border-radius: 0.5em;
+
+  @include smallerMedia {
+    width: 100%;
+    font-size: 0.95em;
+    line-height: 1.1rem;
+  }
 }
 
 .projectTitleContainer, .projectTitleContainerSelected {
@@ -107,11 +119,11 @@
   max-width: 70%;
   max-height: 500px;
   display: inline-block;
-}
 
-.imgContainer img {
-  max-width: 100%;
-  max-height: 500px;
+  img {
+    max-width: 100%;
+    max-height: 500px;
+  }
 }
 
 .buttonList {
@@ -150,4 +162,32 @@
   @extend %linkHover;
   outline-style: dotted;
   outline-offset: 0.05rem;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////                  smaller media                 ////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media (max-width: 660px) {
+  .expandedProject {
+    width: 100%;
+    display: block;
+    padding: 0;
+
+    .imgContainer {
+      max-width: 530px;
+    }
+
+    .buttonList {
+      margin-left: 0;
+      display: flex;
+
+      .linkButton {
+        padding-right: 1em;
+        width: fit-content;
+        margin: 0.5em 1em 0.5em 0;
+      }
+    }
+
+  }
 }
