@@ -6,13 +6,14 @@ const LinkButton = ({text, link}) => (
   link !== "" ? 
     <a href={link} tabIndex="-1">
       <div 
-        className={projectStyles.linkButton} 
-        tabIndex="0"
+        className = {projectStyles.linkButton} 
         onKeyPress = { event => {
           if (event.key === 'Enter') {
             window.open(link, '_blank');
           }
         }}
+        tabIndex = "0"
+        role = "link"
       >
         {text}
       </div>
