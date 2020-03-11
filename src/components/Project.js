@@ -5,7 +5,15 @@ import projectStyles from '../styles/Project.module.scss'
 const LinkButton = ({text, link}) => (
   link !== "" ? 
     <a href={link} tabIndex="-1">
-      <div className={projectStyles.linkButton} tabIndex="0">
+      <div 
+        className={projectStyles.linkButton} 
+        tabIndex="0"
+        onKeyPress = { event => {
+          if (event.key === 'Enter') {
+            window.open(link, '_blank');
+          }
+        }}
+      >
         {text}
       </div>
     </a>

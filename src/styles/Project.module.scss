@@ -134,15 +134,20 @@
   // background-color: rgb(238, 63, 92);
 }
 
-.linkButton:hover {
+%linkHover {
   color: black;
   background-color: rgb(255, 164, 180);
-  border-bottom: 1px solid black;
+  border-bottom: 0.5px solid black;
   margin-bottom: 0.45rem;
+}
+
+.linkButton:hover {
+  @extend %linkHover;
 }
 
 .linkButton:focus {
   @extend %focusVisible;
+  @extend %linkHover;
   outline-style: dotted;
   outline-offset: 0.05rem;
 }
