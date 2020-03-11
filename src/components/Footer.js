@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import footerStyles from "../styles/footer.module.scss"
+import siteData from '../data/siteData';
+import footerStyles from "../styles/footer.module.scss";
 
 const gitHubIcon = require('simple-icons/icons/github');
 const linkedInIcon = require('simple-icons/icons/linkedin');
@@ -8,11 +9,14 @@ const twitterIcon = require('simple-icons/icons/twitter');
 const mediumIcon = require('simple-icons/icons/medium');
 
 const ListLink = props => (
-  <li className={footerStyles.iconLink}>
-    <a href={props.to} target="_blank" rel="noopener noreferrer">
-      {props.children}
-    </a>
-  </li>
+  props.to !== "" ? 
+    <li className={footerStyles.iconLink}>
+      <a href={props.to} target="_blank" rel="noopener noreferrer">
+        {props.children}
+      </a>
+    </li>
+  :
+  <></>
 )
 
 const Icon = ({iconColor, altColor, iconSize, path}) => {
@@ -74,19 +78,19 @@ const Footer = ({...iconProps}) => {
 
       <div className={footerStyles.right}>
         <ul className={footerStyles.iconList}>
-          <ListLink to='https://github.com/khongcodes' >
+          <ListLink to={siteData.sites.gitHub} >
             <Icon path={gitHubIcon.path} {...iconProps} />
           </ListLink>
 
-          <ListLink to='https://linkedin.com/in/khongcodes' >
+          <ListLink to={siteData.sites.linkedIn} >
             <Icon path={linkedInIcon.path} {...iconProps}/>
           </ListLink>
 
-          <ListLink to='https://twitter.com/khongcodes' >
+          <ListLink to={siteData.sites.twitter} >
             <TwitterIcon path={twitterIcon.path} {...iconProps}/>
           </ListLink>
 
-          <ListLink to='https://medium.com/@khongcodes' >
+          <ListLink to={siteData.sites.medium} >
             <Icon path={mediumIcon.path} {...iconProps} />
           </ListLink>
         </ul>

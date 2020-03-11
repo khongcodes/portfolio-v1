@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Project from './Project';
-import projectData from '../data/projectData';
+import siteData from '../data/siteData';
 
 import invitationImg from '../images/invitation.png';
 import heroImg from '../images/hero-s-journey-spread.png';
@@ -17,7 +17,7 @@ const ProjectsList = () => {
 
   return (
     <div role="tablist" >
-      {projectData.projects.map((proj, index) => (
+      {siteData.projects.map((proj, index) => (
         <Project
           key = {proj.name}
           informListStatus = {listCallback}
