@@ -59,7 +59,7 @@ const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
         aria-labelledby = {`tab-${id}`}
       >
         <div className={projectStyles.imgContainer}>
-          <Img fluid={matchImage.node.childImageSharp.fluid}/>
+          <Img fluid={matchImage.node.childImageSharp.fluid} alt={name}/>
         </div>
 
         <div className={projectStyles.buttonList}>
@@ -78,13 +78,18 @@ const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
 }
 
 const Project = ({
-  informListStatus, id, active,
+  informListActive, informListCursor,
+  id, active,
   name, description, tech,
   ...expandedProjData
 }) => {
 
+  const toggleCursor = () => {
+    informListCursor(id)
+  }
+
   const toggleActive = () => {
-    informListStatus(active ? 0 : id);
+    informListActive(active ? 0 : id);
   }
 
   return (
@@ -97,6 +102,8 @@ const Project = ({
             toggleActive()
           }
         }}
+        onMouseOver = {toggleCursor}
+        onFocus = {toggleCursor}
 
         role = "tab"
         tabIndex = "0"

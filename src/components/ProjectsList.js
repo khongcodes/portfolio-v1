@@ -9,18 +9,27 @@ import siteData from '../data/siteData';
 // import itchImg from '../images/itchscraper.png';
 
 const ProjectsList = () => {
+  const [cursorProject, setCursorProject] = useState(0)
   const [selectedProject, setSelectedProject] = useState(0)
 
-  const listCallback = id => setSelectedProject(id)
+  const cursorCallback = id => setCursorProject(id)
+  const activeCallback = id => setSelectedProject(id)
 
   // const imgArray = [invitationImg, heroImg, wanderingImg, itchImg]
 
   return (
-    <div role="tablist" >
-      {siteData.projects.map((proj, index) => (
+    <div 
+      role="tablist"
+      tabIndex = '0'
+      onMouseLeave = {() =>setCursorProject(0)}
+    >
+      <p>active: {selectedProject}</p>
+      <p>cursor: {cursorProject}</p>
+      {siteData.projects.map(proj => (
         <Project
           key = {proj.name}
-          informListStatus = {listCallback}
+          informListActive = {activeCallback}
+          informListCursor = {cursorCallback}
           active = {selectedProject === proj.id}
           imgSlug = {proj.imgSlug}
           {...proj}
