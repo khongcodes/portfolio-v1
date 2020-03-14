@@ -23,14 +23,15 @@ const ProjectsList = () => {
       tabIndex = '0'
       onMouseLeave = {() =>setCursorProject(0)}
     >
-      <p>active: {selectedProject}</p>
-      <p>cursor: {cursorProject}</p>
+      {/* <p>active: {selectedProject}</p>
+      <p>cursor: {cursorProject}</p> */}
       {siteData.projects.map(proj => (
         <Project
           key = {proj.name}
           informListActive = {activeCallback}
           informListCursor = {cursorCallback}
           active = {selectedProject === proj.id}
+          cursorActive = {cursorProject === proj.id}
           imgSlug = {proj.imgSlug}
           {...proj}
         />

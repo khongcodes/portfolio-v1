@@ -21,9 +21,18 @@ const LinkButton = ({text, link}) => (
       </div>
     </a>
   :
-    <div>
-    </div>
+    <>
+    </>
 )
+
+const CursorImage = ({active}) => {
+  return (
+    active ? 
+      <img className={projectStyles.cursor} src='https://media0.giphy.com/media/lae7QSMFxEkkE/source.gif' />
+      :
+      <img hidden/>
+  )
+}
 
 const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
   const data = useStaticQuery(
@@ -79,13 +88,14 @@ const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
 
 const Project = ({
   informListActive, informListCursor,
-  id, active,
+  id, active, cursorActive,
   name, description, tech,
   ...expandedProjData
 }) => {
 
   const toggleCursor = () => {
     informListCursor(id)
+
   }
 
   const toggleActive = () => {
@@ -93,7 +103,13 @@ const Project = ({
   }
 
   return (
-    <div>
+    <div className={projectStyles.topContainer}>
+      <div
+        className={projectStyles.cursorContainer}
+      >
+        <CursorImage active={cursorActive}/>
+      </div>
+
       <div 
         className={!active ? projectStyles.projectTitleContainer : projectStyles.projectTitleContainerSelected}
         onClick = {toggleActive}
