@@ -5,6 +5,7 @@
       "name": "Invitation",
       "description": "A web app for creating shareable event info pages, uncoupled from social media",
       "tech": ["Rails", "React.js", "Redux", "Google Maps API"],
+      "imgSlug": "invitation.png",
       "git": "https://github.com/khongcodes/Invitation",
       "live": "",
       "youtube": "https://www.youtube.com/watch?v=cL8TZPi83VA"
@@ -14,6 +15,7 @@
       "name": "Hero's Journey Spread",
       "description": "A storytelling game driven by drawing and interpreting tarot cards",
       "tech": ["Rails", "SQLite", "CSS", "JavaScript"],
+      "imgSlug": "hero-s-journey-spread.png",
       "git": "https://github.com/khongcodes/Hero-s-Journey-Spread",
       "live": "https://hero-s-journey-spread-client.herokuapp.com/",
       "youtube": "https://www.youtube.com/watch?v=N3AwkQx0Efo"
@@ -23,6 +25,7 @@
       "name": "Wandering",
       "description": "A text-based rogue-lite browser game exploring abandoned spaces",
       "tech": ["Ruby", "Rails", "SQLite", "CSS"],
+      "imgSlug": "wandering.png",
       "git": "https://github.com/khongcodes/Wandering",
       "live": "https://wandering-app.herokuapp.com/",
       "youtube": "https://www.youtube.com/watch?v=BpN95zZWpxY"
@@ -32,6 +35,7 @@
       "name": "ItchScraper",
       "description": "CLI application for browsing Itch.io",
       "tech": ["Ruby", "Nokogiri"],
+      "imgSlug": "itchscraper.png",
       "git": "https://github.com/khongcodes/ItchScraper",
       "live": "",
       "youtube": ""

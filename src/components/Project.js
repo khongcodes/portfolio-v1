@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from "gatsby-image";
 
 import projectStyles from '../styles/Project.module.scss'
 
@@ -23,8 +25,32 @@ const LinkButton = ({text, link}) => (
     </div>
 )
 
-const ExpandedProject = ({active, id, name, img, git, live, youtube}) => {
+const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allFile(filter: {internal: {mediaType: {regex: "/image/"}}, relativePath: {regex: "/^((?!favicon).)/"}}) {
+          edges {
+            node {
+              relativePath
+              childImageSharp {
+                fluid(maxWidth:800) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const matchImage = useMemo(() => (
+    data.allFile.edges.find(({ node }) => node.relativePath === imgSlug)
+  ), [data, imgSlug])
+
   if (active) {
+    console.log(matchImage.node.childImageSharp)
     return (
       <div 
         className = {projectStyles.expandedProject}
@@ -33,7 +59,7 @@ const ExpandedProject = ({active, id, name, img, git, live, youtube}) => {
         aria-labelledby = {`tab-${id}`}
       >
         <div className={projectStyles.imgContainer}>
-          <img src={img} alt={name}/>
+          <Img fluid={matchImage.node.childImageSharp.fluid}/>
         </div>
 
         <div className={projectStyles.buttonList}>
