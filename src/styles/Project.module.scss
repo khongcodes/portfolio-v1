@@ -1,10 +1,11 @@
 @mixin smallerMedia {
-  @media (max-width: 660px) {
+  @media (max-width: $smallMediaSize) {
     @content;
   }
 }
 
 $projects-offset: -5.5em;
+$smallMediaSize: 770px;
 
 %noSelect {
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -28,12 +29,12 @@ $projects-offset: -5.5em;
   margin: 1em 0 1em 1.5em;
   border-radius: 0.5em;
   float: left;
-  // position: relative;
 
   @include smallerMedia {
     width: 100%;
     font-size: 0.95em;
     line-height: 1.1rem;
+    margin-left: 0;
   }
 }
 
@@ -202,11 +203,21 @@ $projects-offset: -5.5em;
 ///////////////////////                  smaller media                 ////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-@media (max-width: 660px) {
+@media (max-width: $smallMediaSize) {
+  .cursorContainer {
+    display:none;
+  }
+  
+  .topContainer {
+    left: 0;
+  }
+
   .expandedProject {
     width: 100%;
     display: block;
     padding: 0;
+    left: 0;
+    margin-top: 0.6em;
 
     .imgContainer {
       width: 95%;
