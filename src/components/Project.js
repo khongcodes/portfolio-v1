@@ -28,9 +28,9 @@ const LinkButton = ({text, link}) => (
 const CursorImage = ({active}) => {
   return (
     active ? 
-      <img className={projectStyles.cursor} src='https://media0.giphy.com/media/lae7QSMFxEkkE/source.gif' />
+      <img className={projectStyles.cursor} src='https://media0.giphy.com/media/lae7QSMFxEkkE/source.gif' alt='cursor' />
       :
-      <img hidden/>
+      <img alt='cursor' hidden/>
   )
 }
 
