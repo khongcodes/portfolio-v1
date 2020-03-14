@@ -50,7 +50,7 @@ const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
   ), [data, imgSlug])
 
   if (active) {
-    console.log(matchImage.node.childImageSharp)
+
     return (
       <div 
         className = {projectStyles.expandedProject}
