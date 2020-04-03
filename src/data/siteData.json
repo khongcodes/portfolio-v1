@@ -1,4 +1,5 @@
 {
+  "cursorGifIsOn": false,
   "projects": [
     {
       "id": 1,
@@ -55,6 +56,6 @@
     "linkedIn": "https://linkedin.com/in/khongcodes",
     "gitHub": "https://github.com/khongcodes",
     "medium": "https://medium.com/@khongcodes",
-    "twitter": ""
+    "twitter": "https://twitter.com/khongcodes"
   }
 }

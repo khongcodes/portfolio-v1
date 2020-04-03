@@ -5,6 +5,8 @@ import siteData from '../data/siteData';
 
 
 const ProjectsList = () => {
+  const cursorGifIsOn = siteData.cursorGifIsOn;
+
   const [cursorProject, setCursorProject] = useState(0)
   const [selectedProject, setSelectedProject] = useState(0)
 
@@ -24,7 +26,7 @@ const ProjectsList = () => {
           informListActive = {activeCallback}
           informListCursor = {cursorCallback}
           active = {selectedProject === proj.id}
-          cursorActive = {cursorProject === proj.id}
+          cursorActive = {cursorGifIsOn && cursorProject === proj.id}
           imgSlug = {proj.imgSlug}
           {...proj}
         />
