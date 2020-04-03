@@ -6,7 +6,7 @@ import projectStyles from '../styles/Project.module.scss'
 
 const LinkButton = ({text, link}) => (
   link !== "" ? 
-    <a href={link} tabIndex="-1">
+    <a href={link} tabIndex="-1" target='_blank' rel='noopener noreferrer'>
       <div 
         className = {projectStyles.linkButton} 
         onKeyPress = { event => {

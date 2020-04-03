@@ -3,10 +3,6 @@ import React, { useState } from 'react';
 import Project from './Project';
 import siteData from '../data/siteData';
 
-// import invitationImg from '../images/invitation.png';
-// import heroImg from '../images/hero-s-journey-spread.png';
-// import wanderingImg from '../images/wandering.png';
-// import itchImg from '../images/itchscraper.png';
 
 const ProjectsList = () => {
   const [cursorProject, setCursorProject] = useState(0)
@@ -15,11 +11,10 @@ const ProjectsList = () => {
   const cursorCallback = id => setCursorProject(id)
   const activeCallback = id => setSelectedProject(id)
 
-  // const imgArray = [invitationImg, heroImg, wanderingImg, itchImg]
-
   return (
-    <div 
-      role="tablist"
+    <div
+      style = {{outline: "none"}} 
+      role = "tablist"
       tabIndex = '-1'
       onMouseLeave = {() =>setCursorProject(0)}
     >
