@@ -104,9 +104,8 @@ const Project = ({
 
   return (
     <div className={projectStyles.topContainer}>
-      <div
-        className={projectStyles.cursorContainer}
-      >
+      
+      <div className={projectStyles.cursorContainer}>
         <CursorImage active={cursorActive}/>
       </div>
 

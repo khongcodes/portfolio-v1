@@ -1,0 +1,18 @@
+//////////////////////////////////////////////////////////////
+$smallMediaSize: 660px;
+$mediumMediaSize: 770px;
+
+/////////////////////////////////////////////////////////////
+
+@mixin smallerMedia {
+  @media (max-width: $smallMediaSize) {
+    @content;
+  }
+}
+
+@mixin mediumMedia {
+  @media (max-width: $mediumMediaSize) {
+    @content;
+  }
+}
+

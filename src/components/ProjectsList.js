@@ -20,7 +20,7 @@ const ProjectsList = () => {
   return (
     <div 
       role="tablist"
-      tabIndex = '0'
+      tabIndex = '-1'
       onMouseLeave = {() =>setCursorProject(0)}
     >
       {siteData.projects.map(proj => (

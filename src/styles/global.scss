@@ -1,3 +1,5 @@
+@import "mediasizes";
+
 @font-face {
   font-family: 'Inter Light';
   src: url("../fonts/Inter-Light.woff2")
@@ -18,13 +20,6 @@
   src: url("../fonts/Inter-SemiBold.woff2")
 }
 
-@mixin smallerMedia {
-  @media (max-width: 660px) {
-    @content;
-  }
-}
-
-
 
 body {
   font-family: 'Inter Light';
@@ -41,14 +36,22 @@ main {
 
 a {
   text-decoration: none;
+  
+  &:hover {text-decoration: none;}
+  &:focus {
+    outline-width: thin;
+    outline-style: dotted;
+    outline-color: pink;  
+  }
 }
 
-a:hover {
-  text-decoration: none;
+h1 {
+  margin-bottom: 0;
+  font-family: 'Inter SemiBold';  
 }
 
-*:focus {
-  outline-width: thin;
-  outline-style: dotted;
-  outline-color: pink;
+h2 {
+  font-family: 'Inter Regular';
+  margin-bottom: 0.2em;
+  text-decoration: underline;
 }

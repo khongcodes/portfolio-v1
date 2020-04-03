@@ -1,8 +1,4 @@
-@mixin smallerMedia {
-  @media (max-width: 660px) {
-    @content;
-  }
-}
+@import "mediasizes";
 
 .introSection {
   padding-top: 1rem;
@@ -12,20 +8,11 @@
     padding-top: 0.2rem;
   }
 
-  h1 {
-    margin-bottom: 0;
-    font-family: 'Inter SemiBold';  
-  }
-
   p { margin-top: 0.2rem; }
 }
 
+
 .projectsSection {
   margin-top: 1rem;
-
-  h2 {
-    font-family: 'Inter Regular';
-    margin-bottom: 0.2em;
-    text-decoration: underline;
-  }
+  outline: none;
 }

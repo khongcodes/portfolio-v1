@@ -1,3 +1,5 @@
+@import "mediasizes";
+
 // not setting up smallerMedia mixin here because the grid layout makes more sense
 // when the area definitions are close together in the document
 
@@ -7,20 +9,20 @@
   font-size: 0.85rem;
   display: flex;
   justify-content: space-evenly;
-}
 
-.left {
-  text-align: right;
-  width:25%;
-}
+  .left {
+    text-align: right;
+    width: 25%;
+  }
 
-.right {
-  width: 25%;
-}
+  .center {
+    text-align: center;
+    width: 25%;  
+  }
 
-.center {
-  text-align: center;
-  width: 25%;
+  .right {
+    width: 25%;
+  }
 }
 
 
@@ -32,27 +34,25 @@
   list-style: none;
   padding-left: 0;
   margin-top: -0.5rem;
-}
+  
+  .iconLink {
+    display: inline-block;
+    margin-right: 1rem;
+  
+    &:last-of-type {margin-right: 0;}
+  }
 
-.iconLink {
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-.iconLink:last-of-type {
-  margin-right: 0;
-}
-
-.twitterLogoContainer {
-  border-radius: 2px;
-  display: block;
-  padding-top: 3.5px;
-  box-sizing: border-box;
-}
-
-.twitterLogo {
-  margin: auto;
-  display: block;
+  .twitterLogoContainer {
+    border-radius: 2px;
+    display: block;
+    padding-top: 3.5px;
+    box-sizing: border-box;
+  
+    .twitterLogo {
+      margin: auto;
+      display: block;
+    }
+  }
 }
 
 
@@ -60,42 +60,39 @@
 ///////////////////////             smaller media viewing              ////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: $smallMediaSize) {
   .container {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     font-size: 0.7rem;
     height: 6rem;
-  }
 
-  .left {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-    margin: 0 auto;
-    text-align: center;
-    width: 80%;
-  }
+    .left {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      margin: 0 auto;
+      text-align: center;
+      width: 80%;
+    }
 
-  .center {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    margin: 0 auto;
-    width: 80%;
-  }
+    .center {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      margin: 0 auto;
+      width: 80%;
+    }
 
-  .right {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 1;
-    text-align: center;
-    margin-top: 0;
-    width: 100%;
-  }
-
-  .iconList {
-    margin-top: 0;
-  }
-
-  .iconLink {
-    margin-right: 6%;
+    .right {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+      text-align: center;
+      margin-top: 0;
+      
+      .iconList {
+        margin-top: 0;
+  
+        .iconLink {margin-right: 6%;}
+      }
+    }
   }
 }

@@ -1,11 +1,6 @@
-@mixin smallerMedia {
-  @media (max-width: $smallMediaSize) {
-    @content;
-  }
-}
+@import "mediasizes";
 
-$projects-offset: -5.5em;
-$smallMediaSize: 770px;
+$projects-horiz-offset: -5.5em;
 
 %noSelect {
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -22,7 +17,17 @@ $smallMediaSize: 770px;
   margin-bottom: -0.12rem;
 }
 
-%projectTitleContainerStyles {
+/////////////////////////////////////////////////////////////////////////////
+
+.topContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: $projects-horiz-offset;
+  height: fit-content;
+}
+
+.projectTitleContainer, .projectTitleContainerSelected {
   width: 80%;
   max-height: fit-content;
   min-height: 3em;
@@ -30,24 +35,12 @@ $smallMediaSize: 770px;
   border-radius: 0.5em;
   float: left;
 
-  @include smallerMedia {
+  @include mediumMedia {
     width: 100%;
     font-size: 0.95em;
     line-height: 1.1rem;
     margin-left: 0;
   }
-}
-
-.topContainer {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  left: $projects-offset;
-  height: fit-content;
-}
-
-.projectTitleContainer, .projectTitleContainerSelected {
-  @extend %projectTitleContainerStyles;
 }
 
 .projectTitleContainer:hover .title, .projectTitleContainer:focus .title {
@@ -74,27 +67,25 @@ $smallMediaSize: 770px;
   // @extend %noSelect;
   @extend %regularCursor;
   margin: 0.5rem 0 0;
-}
 
-.tech {
-  display: inline-block;
-  width: fit-content;
-  font-size: 0.8em;
-  padding: 0.3em 0.4em;
-  margin: 0 0.4em 0.4em;
-  color: rgb(66, 66, 66);
-  border-bottom: 1px solid rgb(182, 182, 182);
-}
-
-.tech:hover {
-  position: relative;
-  top: -1px;
-  background-color: rgb(255, 238, 241);
-  border-bottom-color: rgb(255, 146, 146);
-}
-
-.tech:first-of-type {
-  margin-left: 0;
+  .tech {
+    display: inline-block;
+    width: fit-content;
+    font-size: 0.8em;
+    padding: 0.3em 0.4em;
+    margin: 0 0.4em 0.4em;
+    color: rgb(66, 66, 66);
+    border-bottom: 1px solid rgb(182, 182, 182);
+  
+    &:hover {
+      position: relative;
+      top: -1px;
+      background-color: rgb(255, 238, 241);
+      border-bottom-color: rgb(255, 146, 146);
+    }
+  
+    &:first-of-type {margin-left: 0;}
+  } 
 }
 
 
@@ -106,13 +97,12 @@ $smallMediaSize: 770px;
   width: 4rem;
   height: 4rem;
   float: left;
-}
 
-.cursor {
-  width: 100%;
-  height: 100%;
+  .cursor {
+    width: 100%;
+    height: 100%;
+  }
 }
-
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,6 +110,7 @@ $smallMediaSize: 770px;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 %focusVisible {
+  outline-width: thin;
   outline-style: dashed;
   outline-color: rgb(255, 101, 126);
   outline-offset: 0.8em;
@@ -143,7 +134,7 @@ $smallMediaSize: 770px;
   padding: 0.4rem;
 
   position: relative;
-  left: -$projects-offset;
+  left: -$projects-horiz-offset;
   margin-bottom: 1rem;
 
   animation-name: fade;
@@ -170,32 +161,28 @@ $smallMediaSize: 770px;
 .buttonList {
   @extend %noSelect;
   margin-left: 1em;
-}
 
-.linkButton {
-  width: 3rem;
-  padding: 0.5rem 0.6rem;
-  font-size: 0.9em;
-  margin-bottom: 0.5rem;
-  color: red;
-}
+  .linkButton {
+    width: 3rem;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+    color: red;
 
-%linkHover {
-  color: black;
-  background-color: rgb(255, 164, 180);
-  border-bottom: 0.5px solid black;
-  margin-bottom: 0.45rem;
-}
+    &:hover {
+      color: black;
+      background-color: rgb(255, 164, 180);
+      border-bottom: 0.5px solid black;
+      margin-bottom: 0.45rem;
+    }
 
-.linkButton:hover {
-  @extend %linkHover;
-}
-
-.linkButton:focus {
-  @extend %focusVisible;
-  @extend %linkHover;
-  outline-style: dotted;
-  outline-offset: 0.05rem;
+    &:focus {
+      @extend %focusVisible;
+      @extend .linkButton:hover;
+      outline-style: dotted;
+      outline-offset: 0.05rem;
+    }
+  }
 }
 
 
@@ -203,7 +190,7 @@ $smallMediaSize: 770px;
 ///////////////////////                  smaller media                 ////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-@media (max-width: $smallMediaSize) {
+@media (max-width: $mediumMediaSize) {
   .cursorContainer {
     display:none;
   }
