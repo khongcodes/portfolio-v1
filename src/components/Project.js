@@ -4,16 +4,18 @@ import Img from "gatsby-image";
 
 import projectStyles from '../styles/Project.module.scss'
 
+const openInNewTab = (event, link) => {
+  if (event.key === "Enter") {
+    window.open(link, '_blank');
+  }
+}
+
 const LinkButton = ({text, link}) => (
   link !== "" ? 
     <a href={link} tabIndex="-1" target='_blank' rel='noopener noreferrer'>
       <div 
         className = {projectStyles.linkButton} 
-        onKeyPress = { event => {
-          if (event.key === 'Enter') {
-            window.open(link, '_blank');
-          }
-        }}
+        onKeyPress = {event => openInNewTab(event, link)}
         tabIndex = "0"
         role = "link"
       >
@@ -93,14 +95,8 @@ const Project = ({
   ...expandedProjData
 }) => {
 
-  const toggleCursor = () => {
-    informListCursor(id)
-
-  }
-
-  const toggleActive = () => {
-    informListActive(active ? 0 : id);
-  }
+  const toggleCursor = () => informListCursor(id)
+  const toggleActive = () => informListActive(active ? 0 : id)
 
   return (
     <div className={projectStyles.topContainer}>

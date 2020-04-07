@@ -6,7 +6,7 @@
       "name": "#Co-Caring Dashboard",
       "description": "Weekend hackathon: dashboard supporting local and community actions supporting #shelterinplace.",
       "tech": ["React.js", "SCSS", "Tableau API"],
-      "imgSlug": "invitation.png",
+      "imgSlug": "co-caring-dashboard.png",
       "git": "https://github.com/khongcodes/co-caring-dash",
       "live": "https://co-caring-dashboard.netlify.com",
       "youtube": ""
