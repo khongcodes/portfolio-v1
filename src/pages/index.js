@@ -8,7 +8,7 @@ import indexStyles from "../styles/index.module.scss";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home"/>
+    <SEO title="Portfolio"/>
     <div className={indexStyles.introSection}>
       <h1>Kevin Hong</h1>
       <p>Full stack web developer & designer</p>

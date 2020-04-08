@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image";
 
+import cursorGif from '../images/cursor1.gif';
+
 import projectStyles from '../styles/Project.module.scss'
 
 const openInNewTab = (event, link) => {
@@ -30,7 +32,7 @@ const LinkButton = ({text, link}) => (
 const CursorImage = ({active}) => {
   return (
     active ? 
-      <img className={projectStyles.cursor} src='https://media0.giphy.com/media/lae7QSMFxEkkE/source.gif' alt='cursor' />
+      <img className={projectStyles.cursor} src={cursorGif} alt='cursor' />
       :
       <img alt='cursor' hidden/>
   )

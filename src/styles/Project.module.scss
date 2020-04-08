@@ -1,6 +1,6 @@
 @import "mediasizes";
 
-$projects-horiz-offset: -5.5em;
+$projects-horiz-offset: -6em;
 
 %noSelect {
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -31,7 +31,7 @@ $projects-horiz-offset: -5.5em;
   width: 80%;
   max-height: fit-content;
   min-height: 3em;
-  margin: 1em 0 1em 1.5em;
+  margin: 1em 0 1em 1em;
   border-radius: 0.5em;
   float: left;
 
@@ -94,9 +94,10 @@ $projects-horiz-offset: -5.5em;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 .cursorContainer {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 3rem;
   float: left;
+  margin-top: 0.63rem;
 
   .cursor {
     width: 100%;
