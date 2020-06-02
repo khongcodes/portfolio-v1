@@ -139,13 +139,13 @@ $projects-horiz-offset: -6em;
   margin-bottom: 1rem;
 
   animation-name: fade;
-  animation-duration: 0.23s;
+  animation-duration: 0.15s;
   animation-timing-function: ease-out;
 }
 
 @keyframes fade {
-  from {position: relative; top: -1rem}
-  to {position: relative; top: 0}
+  from {position: relative; top: -1rem; opacity: 0.3}
+  to {position: relative; top: 0; opacity: 1}
 }
 
 .imgContainer {
