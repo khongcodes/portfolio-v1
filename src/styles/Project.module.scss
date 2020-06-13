@@ -45,8 +45,16 @@ $projects-horiz-offset: -6em;
 
 .projectTitleContainer:hover .title, .projectTitleContainer:focus .title {
   margin-bottom: 0.2rem;
-  text-shadow: 0px 5px #ff58bfd5;
+  text-shadow: 0px 4px #ff58bfd5;
   @extend %offsetTitleShadow;
+  .wip {
+    text-shadow: none;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(var(--move-initial), 0, 0) }
+  100% { transform: translate3d(var(--move-final), 0, 0) }
 }
 
 .title {
@@ -54,6 +62,37 @@ $projects-horiz-offset: -6em;
   @extend %regularCursor;
   width: fit-content;
   margin: 0.2rem 0;
+  
+  .wip {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0;
+    // text-decoration: underline;
+    // border-radius: 0.35rem;
+    margin-left: 0.55rem;
+    position: relative;
+    top: 5px;
+    width: 30px;
+    overflow: hidden;
+
+    --offset: -1.5rem;
+    --move-initial: calc(25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+
+    .wipContentWrapper {
+      width: fit-content;
+      display: flex;
+      position: relative;
+      transform: translate3d(var(--move-initial), 0, 0);
+      animation: marquee 2.5s linear infinite;
+
+      span {
+        padding: 0 0.18rem;
+        color: #ff58bfd5;
+      }
+    }
+  }
 }
 
 .description {
@@ -125,6 +164,9 @@ $projects-horiz-offset: -6em;
   text-shadow: 0px 4px 2px #f828a8d5;
   font-size: 1.3em;
   @extend %offsetTitleShadow;
+  .wip {
+    text-shadow: none;
+  }
 }
 
 .expandedProject {

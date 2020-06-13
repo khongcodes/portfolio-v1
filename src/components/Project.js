@@ -94,6 +94,7 @@ const Project = ({
   informListActive, informListCursor,
   id, active, cursorActive,
   name, description, tech,
+  wip,
   ...expandedProjData
 }) => {
 
@@ -124,7 +125,24 @@ const Project = ({
         aria-controls = {`panel-${id}`}
         id = {`tab-${id}`}
       >
-        <h3 className={projectStyles.title}> {name} </h3>
+        <h3 className={projectStyles.title}> 
+          {name} 
+          
+          {
+            wip ? 
+              <div className={projectStyles.wip}>
+                <div className={projectStyles.wipContentWrapper}>
+                  <span>WIP</span>
+                  <span>WIP</span>
+                  <span>WIP</span>
+                  <span>WIP</span>
+                </div>
+              </div> 
+            : null
+          }
+
+        </h3>
+        
         <p className={projectStyles.description}> {description} </p>
 
         <div className={projectStyles.techList}>
