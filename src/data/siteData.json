@@ -46,7 +46,7 @@
       "id": 5,
       "name": "Wandering",
       "description": "A text-based rogue-lite browser game exploring abandoned spaces",
-      "tech": ["Ruby", "Rails", "PostgreSQL", "CSS"],
+      "tech": ["Ruby", "Rails", "PostgreSQL", "CSS", "JavaScript"],
       "imgSlug": "wandering.png",
       "git": "https://github.com/khongcodes/Wandering",
       "live": "https://wandering-app.herokuapp.com/",
