@@ -72,7 +72,7 @@ const ExpandedProject = ({active, id, name, imgSlug, git, live, youtube}) => {
         aria-labelledby = {`tab-${id}`}
       >
         <div className={projectStyles.imgContainer}>
-          <Img fluid={matchImage.node.childImageSharp.fluid} alt={name}/>
+          <Img fluid={matchImage.node.childImageSharp.fluid} alt={name} />
         </div>
 
         <div className={projectStyles.buttonList}>
