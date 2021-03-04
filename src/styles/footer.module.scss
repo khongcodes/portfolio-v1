@@ -65,7 +65,8 @@
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     font-size: 0.7rem;
-    height: 6rem;
+    height: 5rem;
+    margin-bottom: 2rem;
 
     .left {
       grid-column: 1 / span 1;
@@ -87,6 +88,7 @@
       grid-row: 2 / span 1;
       text-align: center;
       margin-top: 0;
+      width: 100%;
       
       .iconList {
         margin-top: 0;
