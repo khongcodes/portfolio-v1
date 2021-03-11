@@ -14,13 +14,12 @@
     {
       "id": 2,
       "name": "KHongDraws Rebuild",
-      "description": "Rebuild of an illustration portfolio formerly hosted on Squarespace.",
+      "description": "Responsive rebuild of an illustration portfolio formerly hosted on Squarespace.",
       "tech": ["React.js", "TypeScript", "SASS", "Figma", "AWS"],
       "imgSlug": "khillus.png",
       "git": "https://github.com/khongcodes/kh-illus-pofo",
       "live": "https://khongdraws.com/",
-      "youtube": "",
-      "wip": true
+      "youtube": ""
     },
     {
       "id": 3,
